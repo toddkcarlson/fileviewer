@@ -1,0 +1,16 @@
+<h1>File Viewer</h1>
+
+<div id="map" style="width:100%; max-width:1200px; height:425px; background:grey;"></div>
+
+<script>
+function myMap() {
+var mapOptions = {
+    center: new google.maps.LatLng(40, -95),
+    zoom: 4
+}
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS_KEY"] %>
+&callback=myMap"></script>
