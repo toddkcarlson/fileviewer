@@ -10,9 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180730030342) do
+ActiveRecord::Schema.define(version: 20180730214431) do
 
-  create_table "kmzs", force: :cascade do |t|
+  create_table "kmls", force: :cascade do |t|
+    t.string "name"
+    t.string "attachment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
