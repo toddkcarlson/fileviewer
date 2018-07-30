@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get 'home/index'
-  root 'home#index'
+   resources :kmls, only: [:index, :new, :create, :destroy]
+   root "kmls#index"
 end
