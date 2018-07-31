@@ -42,7 +42,12 @@ class AttachmentUploader < CarrierWave::Uploader::Base
    def extension_white_list
      %w(kml kmz)
    end
-
+   
+  # Allows a size of greater than or equal to 1 byte and less than or equal to 10 MB
+  def size_range
+    1..10.megabytes
+  end
+  
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename
