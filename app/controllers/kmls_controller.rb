@@ -4,7 +4,7 @@ class KmlsController < ApplicationController
    end
 
    def new
-      # @kml = Kml.new
+       @kml = Kml.new
    end
 
    def create
