@@ -9,6 +9,8 @@ class KmlsController < ApplicationController
 
    def create
       @kml = Kml.new(kml_params)
+      # @kml.name =  @kml
+
       if @kml.save
          redirect_to kmls_path, notice: "The kml #{@kml.name} has been uploaded."
       else

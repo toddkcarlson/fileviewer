@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Vermont_DWGs.kmz</name>
+	<Style id="PointStyle1_descstyle">
+		<IconStyle>
+			<color>ff0000ff</color>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff0000ff</color>
+			<scale>0.75</scale>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<b>$[name]</b><br/><br/>$[description]<br/>]]></text>
+		</BalloonStyle>
+	</Style>
+	<Folder>
+		<name>My Places</name>
+		<open>1</open>
+		<Style>
+			<ListStyle>
+				<listItemType>check</listItemType>
+				<ItemIcon>
+					<state>open</state>
+					<href>mysavedplaces_open.png</href>
+				</ItemIcon>
+				<ItemIcon>
+					<state>closed</state>
+					<href>mysavedplaces_closed.png</href>
+				</ItemIcon>
+				<bgColor>00ffffff</bgColor>
+				<maxSnippetLines>2</maxSnippetLines>
+			</ListStyle>
+		</Style>
+		<Placemark>
+			<name>Spatial_f2f</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>Properties</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8"/><style type="text/css">body    {overflow:auto;}table   {border-collapse:separate; border-spacing:3px; padding:3px; width:100%;}caption {background:#9cbce2; font-weight:bold;}.altrow {background:#d4e4f3;}</style></head><body><table><caption>Properties</caption><tr><td>Folder</td><td>C:\sample\</td></tr>
+<tr class="altrow"><td>Last Modification</td><td>Tuesday, May 22, 2018 11:03:04 AM</td></tr>
+<tr><td>File Size</td><td>192.81 kB</td></tr>
+<tr class="altrow"><td>Image</td><td><a href="C:\sample\Spatial_f2f.DWG"><img src="Spatial_f2f.bmp"></a></td></tr>
+</table></body></html>]]></description>
+			<styleUrl>#PointStyle1_descstyle</styleUrl>
+			<Point>
+				<coordinates>-72.68432996999999,44.46846372,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>spatial_f2f</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>Properties</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8"/><style type="text/css">body    {overflow:auto;}table   {border-collapse:separate; border-spacing:3px; padding:3px; width:100%;}caption {background:#9cbce2; font-weight:bold;}.altrow {background:#d4e4f3;}</style></head><body><table><caption>Properties</caption><tr><td>Folder</td><td>C:\sample\2013\</td></tr>
+<tr class="altrow"><td>Last Modification</td><td>Tuesday, May 15, 2012 1:36:19 AM</td></tr>
+<tr><td>File Size</td><td>588.03 kB</td></tr>
+<tr class="altrow"><td>Image</td><td><a href="C:\sample\2013\spatial_f2f.dwg"><img src="spatial_f2f_01.bmp"></a></td></tr>
+</table></body></html>]]></description>
+			<styleUrl>#PointStyle1_descstyle</styleUrl>
+			<Point>
+				<coordinates>-72.68159666,44.4692006,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>rubber</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>Properties</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8"/><style type="text/css">body    {overflow:auto;}table   {border-collapse:separate; border-spacing:3px; padding:3px; width:100%;}caption {background:#9cbce2; font-weight:bold;}.altrow {background:#d4e4f3;}</style></head><body><table><caption>Properties</caption><tr><td>Folder</td><td>C:\sample\</td></tr>
+<tr class="altrow"><td>Last Modification</td><td>Wednesday, May 27, 2015 9:31:25 PM</td></tr>
+<tr><td>File Size</td><td>94.25 kB</td></tr>
+<tr class="altrow"><td>Image</td><td><a href="C:\sample\rubber.dwg"><img src="rubber.bmp"></a></td></tr>
+</table></body></html>]]></description>
+			<styleUrl>#PointStyle1_descstyle</styleUrl>
+			<Point>
+				<coordinates>-72.68032787999999,44.46531191,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
