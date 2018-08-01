@@ -8,7 +8,7 @@
 </div>
 <br>
 
-<div id="map" style="width:100%; max-width:1200px; height:425px; background:grey;"></div>
+<div id="map" style="width:100%; max-width:1200px; height:225px; background:grey;"></div>
 
 <script>
 function myMap() {
@@ -23,8 +23,9 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS_KEY"] %>
 &callback=myMap"></script>
 
-
-    <h1>KML Click Capture Sample</h1>
+    <h2>https://fileviewer.herokuapp.com/uploads/tmp/<%= @kml %></h2>
+    
+    <p><%= @kml.attachment_url %></p>
     <style>
       html, body {
         height: 370px;
