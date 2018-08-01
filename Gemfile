@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use Figaro for environment variables(s)
+# Use Figaro for environment variable(s)
 gem 'figaro', '1.0'
 
 # Use Carriewave for file upload
