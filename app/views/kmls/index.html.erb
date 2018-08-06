@@ -23,9 +23,7 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS_KEY"] %>
 &callback=myMap"></script>
 
-    <h2>https://fileviewer.herokuapp.com/uploads/tmp/<%= @kml %></h2>
-    
-    <p><%= @kml.attachment_url %></p>
+
     <style>
       html, body {
         height: 370px;
