@@ -20,9 +20,9 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 }
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS_KEY"] %>
-&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMqNZLZFf39QPkp2ZnAPmZip3todd6cJ0=myMap"></script>
 
+<p><%= @kml.url %></p>
 
     <style>
       html, body {
@@ -73,6 +73,6 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
         });
       }
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS_KEY"] %>&callback=initMap">
+     <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMqNZLZFf39QPkp2ZnAPmZip3todd6cJ0&callback=initMap">
     </script>
