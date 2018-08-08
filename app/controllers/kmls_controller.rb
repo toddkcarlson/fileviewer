@@ -12,7 +12,7 @@ class KmlsController < ApplicationController
       # @kml.name =  @kml
 
       if @kml.save
-         redirect_to kmls_path, notice: "The kml #{@kml.name} has been uploaded."
+         redirect_to kmls_path, notice: "The kml #{@kml} has been uploaded."
       else
          render "new"
       end     
@@ -21,12 +21,12 @@ class KmlsController < ApplicationController
    def destroy
       @kml = Kml.find(params[:id])
       @kml.destroy
-      redirect_to kmls_path, notice:  "The kml #{@kml.name} has been deleted."
+      redirect_to kmls_path, notice:  "The kml #{@kml} has been deleted."
    end
    
    private
       def kml_params
-      params.require(:kml).permit(:name, :attachment)
+      params.require(:kml).permit(:attachment)
    end
 
 end
