@@ -1,16 +1,11 @@
 <h1>File Viewer</h1>
 
-<div>
-   <%= form_for Kml.new do |f| %>
-      <%= f.file_field :attachment %>
-      <%= f.submit "Submit to Map" %>
-   <% end %>
-</div>
-<br>
+
+ <br>
 <p>Your file url:</p>
-<% unless @kml.blank? %>
-  <p>https://fileviewer.herokuapp.com <%= @kml.attachment_url.to_s %></p>
-<% end %>
+ if @kml.present? %>
+  <p>https://fileviewer.herokuapp.com  kml.attachment_url.to_s %></p>
+ end %>
 
 <div id="map" style="width:100%; max-width:1200px; height:425px; background:grey;"></div>
 
@@ -52,10 +47,10 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
   
     <!-- <div id="map"></div> -->
     <!-- <div id="capture"></div> -->
-    <% unless @kml.blank? %>
+     if @kml.present? %>
     <script>
       var map;
-      var src = 'https://fileviewer.herokuapp.com <%= @kml.attachment_url.to_s %>';
+      var src = 'https://fileviewer.herokuapp.com/kml.attachment_url.to_s %>';
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -80,4 +75,4 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
      <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMqNZLZFf39QPkp2ZnAPmZip3todd6cJ0&callback=initMap">
     </script>
-<% end %>
+ end %>
