@@ -1,6 +1,6 @@
 class KmlsController < ApplicationController
    def index
-   	   @kml = Kml.new
+   	   @kml = Kml.first
    end
 
    def new

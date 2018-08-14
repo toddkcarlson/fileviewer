@@ -7,8 +7,8 @@
    <% end %>
 </div>
 <br>
-
-<div id="map" style="width:100%; max-width:1200px; height:225px; background:grey;"></div>
+<p>Your file url: https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %></p>
+<div id="map" style="width:100%; max-width:1200px; height:425px; background:grey;"></div>
 
 <script>
 function myMap() {
@@ -20,15 +20,13 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 }
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=temp=myMap"></script>
-
-<p>Your file url: <%= @kml.attachment_url.to_s %></p>    
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMqNZLZFf39QPkp2ZnAPmZip3todd6cJ0=myMap"></script>   
 
     <style>
       html, body {
         height: 370px;
-        padding: 0;
-        margin: 0;
+        padding: 10;
+        margin: 10;
         }
       #map {
        height: 425px;
@@ -49,15 +47,15 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
     </style>
   
     <!-- <div id="map"></div> -->
-    <div id="capture"></div>
+    <!-- <div id="capture"></div> -->
     <script>
       var map;
-      var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
+      var src = 'https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %>';
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(-19.257753, 146.823688),
-          zoom: 2,
+          center: new google.maps.LatLng(40, -95),
+          zoom: 4,
           mapTypeId: 'terrain'
         });
 
@@ -74,5 +72,5 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
       }
     </script>
      <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=temp0&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMqNZLZFf39QPkp2ZnAPmZip3todd6cJ0&callback=initMap">
     </script>
