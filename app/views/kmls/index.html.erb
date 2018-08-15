@@ -1,5 +1,4 @@
 <h1>File Viewer</h1>
-
 <!-- kml form -->
 <div>
    <%= form_for Kml.new do |f| %>
@@ -7,11 +6,7 @@
       <%= f.submit "Submit to Map" %>
    <% end %>
 </div>
-<br>
-<p>Your file url:</p>
-  <p>https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %></p>
-<p>Google example:</p>
-  <p>https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml</p>
+<p><b>Your file url:</b> https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %></p>
 
 <!-- google map api -->
 <script async defer
@@ -19,11 +14,12 @@
 </script>
 
 <!-- custom kml map -->
- <div id="map" style="width:100%; max-width:1200px; height:425px; background:grey;"></div>
-      
+ <div id="capture" style="width:20%; max-width:250px;"></div> 
+ <div id="map" style="width:75%; max-width:1200px; height:425px; background:grey;"></div>
+ <div id="capture"></div>     
     <script>
       var map;
-      var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
+      var src = 'https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %>';
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -60,12 +56,12 @@
        border: thin solid #333;
        }
       #capture {
-       height: 360px;
-       width: 480px;
+       /*height: 360px;
+       width: 480px;*/
        overflow: hidden;
        float: left;
        background-color: #ECECFB;
        border: thin solid #333;
-       border-left: none;
+       /*border-left: none;*/
        }
     </style>
