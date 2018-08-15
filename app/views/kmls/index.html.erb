@@ -1,5 +1,6 @@
 <h1>File Viewer</h1>
 
+<!-- load kml form -->
 <div>
    <%= form_for Kml.new do |f| %>
       <%= f.file_field :attachment %>
@@ -11,21 +12,43 @@
 
   <p>https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %></p>
 
-
-<div id="map" style="width:100%; max-width:1200px; height:425px; background:grey;"></div>
-
-
-<script>
-function myMap() {
-var mapOptions = {
-    center: new google.maps.LatLng(40, -95),
-    zoom: 4
-}
-var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-}
+<!-- google map api -->
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMqNZLZFf39QPkp2ZnAPmZip3todd6cJ0&callback=initMap">
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMqNZLZFf39QPkp2ZnAPmZip3todd6cJ0=myMap"></script>   
+<!-- custom kml map -->
+<div id="map" style="width:100%; max-width:1200px; height:425px; background:grey;"></div>
+      
+    <script>
+      var map;
+      var src = 'https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %>';
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: new google.maps.LatLng(40, -95),
+          zoom: 4,
+          mapTypeId: 'terrain'
+        });
+
+        var kmlLayer = new google.maps.KmlLayer(src, {
+          suppressInfoWindows: true,
+          preserveViewport: false,
+          map: map
+        });
+        kmlLayer.addListener('click', function(event) {
+          var content = event.featureData.infoWindowHtml;
+          var testimonial = document.getElementById('capture');
+          testimonial.innerHTML = content;
+        });
+      }
+    </script>
+
+<!-- google kml example map -->
+
+    <!-- <div id="map"></div> -->
+    <!-- <div id="capture"></div> -->
+
 
     <style>
       html, body {
@@ -50,34 +73,3 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
        border-left: none;
        }
     </style>
-  
-    <!-- <div id="map"></div> -->
-    <!-- <div id="capture"></div> -->
-    
-    <script>
-      var map;
-      var src = 'https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %>';
-
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(40, -95),
-          zoom: 4,
-          mapTypeId: 'terrain'
-        });
-
-        var kmlLayer = new google.maps.KmlLayer(src, {
-          suppressInfoWindows: true,
-          preserveViewport: false,
-          map: map
-        });
-        kmlLayer.addListener('click', function(event) {
-          var content = event.featureData.infoWindowHtml;
-          var testimonial = document.getElementById('capture');
-          testimonial.innerHTML = content;
-        });
-      }
-    </script>
-    
-     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMqNZLZFf39QPkp2ZnAPmZip3todd6cJ0&callback=initMap">
-    </script>
