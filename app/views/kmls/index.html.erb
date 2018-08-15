@@ -9,7 +9,7 @@
 <br>
 <p>Your file url:</p>
 
-  <p>https://fileviewer.herokuapp.com <%= @kml.attachment_url.to_s %></p>
+  <p>https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %></p>
 
 
 <div id="map" style="width:100%; max-width:1200px; height:425px; background:grey;"></div>
@@ -56,7 +56,7 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
     
     <script>
       var map;
-      var src = 'https://fileviewer.herokuapp.com <%= @kml.attachment_url.to_s %>';
+      var src = 'https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %>';
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
