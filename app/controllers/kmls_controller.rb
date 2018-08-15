@@ -1,8 +1,6 @@
 class KmlsController < ApplicationController
    def index
-      if @kml.present?
    	    @kml = Kml.first
-      end
    end
 
    def new
