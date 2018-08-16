@@ -1,10 +1,10 @@
-***REMOVED***
+development:
   adapter: async
 
-***REMOVED***
+test:
   adapter: async
 
-***REMOVED***
+production:
   adapter: redis
   url: redis://localhost:6379/1
   channel_prefix: fileviewer_production
