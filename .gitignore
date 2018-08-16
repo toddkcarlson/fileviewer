@@ -12,7 +12,7 @@
 /db/*.sqlite3-journal
 
 # Ignore secrets.yml files
-#secrets.yml
+secrets.yml
 
 # Ignore environment variables
 /config/application.yml
