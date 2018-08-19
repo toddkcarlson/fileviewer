@@ -6,7 +6,10 @@
       <%= f.submit "Submit to Map" %>
    <% end %>
 </div>
-<p><b>Your file url:</b> https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %></p>
+
+<% if @kml.present? %>
+  <p><b>Your file url:</b> https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %></p>
+<% end %>
 
 <!-- google map api -->
 <script async defer
@@ -19,7 +22,10 @@
  <div id="capture"></div>     
     <script>
       var map;
-      var src = 'https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %>';
+      
+      <% if @kml.present? %>
+        var src = 'https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %>';
+      <% end %>
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
