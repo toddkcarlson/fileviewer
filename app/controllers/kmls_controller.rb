@@ -1,8 +1,6 @@
 class KmlsController < ApplicationController
    def index
-      if @kml.present?
    	  @kml = Kml.order("created_at").last
-      end
    end
 
    def new

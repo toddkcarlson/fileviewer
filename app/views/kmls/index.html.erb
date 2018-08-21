@@ -7,8 +7,9 @@
    <% end %>
 </div>
 
-<% if @kml.present? %>
-  <p><b>Your file url:</b> https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %></p>
+<% if Kml.last.nil? %>
+<% else %>
+  <p><b>Your file url:</b> https://fileviewer.herokuapp.com<%= Kml.last.attachment_url.to_s %></p>
 <% end %>
 
 <!-- google map api -->
@@ -23,7 +24,8 @@
     <script>
       var map;
       
-      <% if @kml.present? %>
+      <% if @kml.nil? %>
+      <% else %>
         var src = 'https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %>';
       <% end %>
 
