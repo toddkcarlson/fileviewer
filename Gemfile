@@ -38,6 +38,9 @@ gem 'figaro', '1.0'
 # Use Carriewave for file upload
 gem 'carrierwave', '~> 0.9'
 
+# Use Whenever for scheduled delete(s)
+#gem 'whenever', require: false
+
  group :production do
    # Use pg as the production database for Active Record
    gem 'pg'
