@@ -6,7 +6,7 @@
       <%= f.submit "Submit to Map" %>
    <% end %>
 </div>
-<p>session_id:<% session[:session_id] %></p>
+<p>session_id:<% session[:name] %></p>
 <% if Kml.last.nil? %>
 <% else %>
   <p><b>Your file url:</b> https://fileviewer.herokuapp.com<%= Kml.last.attachment_url.to_s %></p>
@@ -14,7 +14,7 @@
 
 <!-- google map api -->
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMqNZLZFf39QPkp2ZnAPmZip3todd6cJ0&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4QdiJImYGpYlOT-Ceqn6dB6IOfkTS22k&callback=initMap">
 </script>
 
 <!-- custom kml map -->
@@ -23,10 +23,12 @@
  <div id="capture"></div>     
     <script>
       var map;
-      
+      // https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml
+      // https://fileviewer.herokuapp.com/uploads/tmp/westcampus.kml
+      // 'https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %>'
       <% if @kml.nil? %>
       <% else %>
-        var src = 'https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %>';
+        var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
       <% end %>
 
       function initMap() {
@@ -73,3 +75,5 @@
        /*border-left: none;*/
        }
     </style>
+
+
