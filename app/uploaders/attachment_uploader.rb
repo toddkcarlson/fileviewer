@@ -14,7 +14,7 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     @current_session = session[:session_id]    
-    "uploads/#{model.current_session}/"
+    "uploads/#{current_session}/"
  #   "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
  #   "uploads/temp/"
  #    "uploads/#{model.send(:current_session)}"
