@@ -1,10 +1,9 @@
 class KmlsController < ApplicationController
-   def index
-   	  @kml = Kml.order("created_at").last
 
-        session[:attachment] = params[:attachment] if params[:attachment]
-        session[:name] = "Todd"
-        # render plain: "<p>session_id: #{session[:attachment]}</p>"
+   def index
+        @current_session = session[:session_id]
+
+   	  @kml = Kml.order("created_at").last
    end
 
    def new
@@ -13,18 +12,12 @@ class KmlsController < ApplicationController
 
    def create
       @kml = Kml.new(kml_params)
-      # @kml.name =  @kml
 
       if @kml.save
          redirect_to kmls_path, notice: "The kml #{@kml} has been uploaded."
       else
          render "new"
       end     
-   end
-
-   def greet
-        session[:attachment] = params[:attachment] if params[:attachment]
-        render plain: "<p>session_id: #{session[:attachment]}</p>"
    end
 
    def destroy
@@ -34,8 +27,8 @@ class KmlsController < ApplicationController
    end
    
    private
-      def kml_params
-      params.require(:kml).permit(:attachment)
+   def kml_params
+     params.require(:kml).permit(:attachment)
    end
 
 end

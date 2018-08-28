@@ -6,7 +6,7 @@
       <%= f.submit "Submit to Map" %>
    <% end %>
 </div>
-<p>session_id:<% session[:name] %></p>
+<p>current session_id: <%= @current_session %></p>
 <% if Kml.last.nil? %>
 <% else %>
   <p><b>Your file url:</b> https://fileviewer.herokuapp.com<%= Kml.last.attachment_url.to_s %></p>
