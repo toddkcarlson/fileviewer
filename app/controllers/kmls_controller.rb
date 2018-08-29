@@ -1,7 +1,7 @@
 class KmlsController < ApplicationController
 
    def index
-        @current_session = session[:session_id]
+        $current_session = session[:session_id]
 
    	  @kml = Kml.order("created_at").last
    end
