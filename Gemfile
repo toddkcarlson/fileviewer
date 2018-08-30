@@ -38,6 +38,9 @@ gem 'figaro', '1.0'
 # Use Carriewave for file upload
 gem 'carrierwave', '~> 0.9'
 
+# For saving session_id to db
+# gem 'activerecord-session_store'
+
 # Use Whenever for scheduled delete(s)
 #gem 'whenever', require: false
 

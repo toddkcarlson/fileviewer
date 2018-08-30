@@ -1,9 +1,10 @@
 class KmlsController < ApplicationController
 
    def index
-        $current_session = session[:session_id]
-
-   	  @kml = Kml.order("created_at").last
+        #$current_session = session[:session_id]
+   	  # @kml = Kml.order("created_at").last
+        
+        @kml = Kml.where("session = ?", session[:session_id]).order("created_at").last
    end
 
    def new
@@ -12,6 +13,7 @@ class KmlsController < ApplicationController
 
    def create
       @kml = Kml.new(kml_params)
+      @kml.session = session[:session_id]
 
       if @kml.save
          redirect_to kmls_path, notice: "The kml #{@kml} has been uploaded."

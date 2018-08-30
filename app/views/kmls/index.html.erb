@@ -6,10 +6,9 @@
       <%= f.submit "Submit to Map" %>
    <% end %>
 </div>
-<p>current session_id: <%= $current_session %></p>
+ <!-- <p>current session_id: <%= @kml %></p> -->
 <% if @kml.nil? %>
 <% else %>
-  <p><b>Your file url:</b> https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %></p>
   <p><b>Your file url:</b> https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %></p>
 <% end %>
 
@@ -26,10 +25,11 @@
       var map;
       <% if @kml.nil? %>
       <% else %>
-        var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
+        var src = 'https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %>';
         // https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml
         // https://fileviewer.herokuapp.com/uploads/tmp/westcampus.kml
         // 'https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %>'        
+        // 'http://localhost:3000/uploads/kml/attachment/1/westcampus.kml'              
       <% end %>
 
       function initMap() {
