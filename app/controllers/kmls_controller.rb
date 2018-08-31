@@ -1,9 +1,9 @@
 class KmlsController < ApplicationController
 
    def index
-        #$current_session = session[:session_id]
-   	  # @kml = Kml.order("created_at").last
-        @kml = Kml.where("session = ?", session[:session_id]).order("created_at").last
+       @kml = Kml.where("session = ?", session[:session_id]).order("created_at").last
+       #Kml.where(session: session[:session_id]).destroy_all
+       #@kml = Kml.new
    end
 
    def new
