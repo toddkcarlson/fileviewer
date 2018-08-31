@@ -3,7 +3,6 @@ class KmlsController < ApplicationController
    def index
         #$current_session = session[:session_id]
    	  # @kml = Kml.order("created_at").last
-        
         @kml = Kml.where("session = ?", session[:session_id]).order("created_at").last
    end
 
@@ -12,6 +11,7 @@ class KmlsController < ApplicationController
    end
 
    def create
+      #@kml = Kml.new(kml_params.merge(expires_at: Time.now + 10.seconds))
       @kml = Kml.new(kml_params)
       @kml.session = session[:session_id]
 
