@@ -42,7 +42,7 @@ gem 'carrierwave', '~> 0.9'
 # gem 'activerecord-session_store'
 
 # Use Whenever for scheduled delete(s)
-#gem 'whenever', require: false
+# gem 'whenever', require: false
 
  group :production do
    # Use pg as the production database for Active Record

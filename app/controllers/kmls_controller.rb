@@ -1,5 +1,7 @@
 class KmlsController < ApplicationController
 
+   require 'fileutils'
+
    def index
        @kml = Kml.where("session = ?", session[:session_id]).order("created_at").last
        #Kml.where(session: session[:session_id]).destroy_all
@@ -11,6 +13,9 @@ class KmlsController < ApplicationController
    end
 
    def create
+      FileUtils.rm_rf(Dir['*/uploads/kml/*'])
+      Kml.destroy_all
+
       #@kml = Kml.new(kml_params.merge(expires_at: Time.now + 10.seconds))
       @kml = Kml.new(kml_params)
       @kml.session = session[:session_id]
