@@ -14,9 +14,13 @@
 <% end %>
 
 <!-- google map api -->
-<script async defer
+<!-- <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4QdiJImYGpYlOT-Ceqn6dB6IOfkTS22k&callback=initMap">
-</script>
+</script> -->
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS_KEY"] %>
+&callback=initMap"></script>
+
 
 <!-- custom kml map -->
  <div id="capture" style="width:20%; max-width:250px;"></div> 
