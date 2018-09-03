@@ -1,12 +1,13 @@
-<h1>File Viewer</h1>
-<!-- kml form -->
+<h1>KML File Viewer</h1>
+<!-- kml upload form -->
 <div>
    <%= form_for Kml.new do |f| %>
       <%= f.file_field :attachment %>
       <%= f.submit "Submit to Map" %>
    <% end %>
 </div>
- <!-- <p>current session_id: <%= @kml %></p> -->
+
+<!-- kml file path if successful -->
 <% if @kml.nil? %>
 <% else %>
   <p><b>Your file url:</b> https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %></p>
@@ -25,10 +26,7 @@
       var map;
       <% if @kml.nil? %>
       <% else %>
-        var src = 'https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %>';
-        // https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml
-        // https://fileviewer.herokuapp.com/uploads/kml/attachment/1/westcampus.kml
-        // 'https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %>'             
+        var src = 'https://fileviewer.herokuapp.com<%= @kml.attachment_url.to_s %>';           
       <% end %>
 
       function initMap() {
@@ -75,5 +73,3 @@
        /*border-left: none;*/
        }
     </style>
-
-
